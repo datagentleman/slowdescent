@@ -1,0 +1,6 @@
+bin/
+lib/
+include/
+share/
+slowdescent/.vscode/
+pyvenv.cfg
