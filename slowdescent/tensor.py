@@ -15,23 +15,28 @@ class Tensor:
         return self.data
 
 
-    def __add__(self, t2: ND_DATA) -> Tensor:
+    def add(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data + t2)
+        
 
-
-    def __sub__(self, t2: ND_DATA) -> Tensor:
+    def sub(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data - t2)
 
 
-    def __mul__(self, t2: ND_DATA) -> Tensor:
+    def mul(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data * t2)
     
     
-    def __pow__(self, t2: ND_DATA) -> Tensor:
+    def pow(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data ** t2)
         
     
-    def __truediv__(self, t2: ND_DATA) -> Tensor:
+    def div(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data / t2)
-    
-    
+
+
+    def __add__(self, t2: ND_DATA) -> Tensor: return self.add(t2)
+    def __sub__(self, t2: ND_DATA) -> Tensor: return self.sub(t2)
+    def __mul__(self, t2: ND_DATA) -> Tensor: return self.mul(t2)
+    def __pow__(self, t2: ND_DATA) -> Tensor: return self.pow(t2)
+    def __truediv__(self, t2: ND_DATA) -> Tensor: return self.div(t2)

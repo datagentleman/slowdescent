@@ -21,29 +21,36 @@ def create_tensors(*dims):
 
 def test_tensor_add():
     sd1, sd2, t1, t2 = create_tensors(2, 2)
+    
     np.testing.assert_array_equal(sd1+sd2, t1+t2)
     np.testing.assert_array_equal(sd1+2.0, t1+2.0)
+    np.testing.assert_array_equal(sd1.add(sd2), t1.add(t2))
 
 
 def test_tensor_sub():
     sd1, sd2, t1, t2 = create_tensors(2, 2)      
     np.testing.assert_array_equal(sd1-sd2, t1-t2)
     np.testing.assert_array_equal(sd1-2, t1-2)
+    np.testing.assert_array_equal(sd1.sub(sd2), t1.sub(t2))
 
 
 def test_tensor_mul():
     sd1, sd2, t1, t2 = create_tensors(2, 2)
     np.testing.assert_array_equal(sd1*sd2, t1*t2)
     np.testing.assert_array_equal(sd1*2, t1*2)
+    np.testing.assert_array_equal(sd1.mul(sd2), t1.mul(t2))
 
 
 def test_tensor_div():
     sd1, sd2, t1, t2 = create_tensors(2, 2)      
     np.testing.assert_array_equal(sd1/sd2, t1/t2)
     np.testing.assert_array_equal(sd1/2, t1/2)
+    np.testing.assert_array_equal(sd1.div(sd2), t1.div(t2))
 
 
 def test_tensor_pow():
     sd1, sd2, t1, t2 = create_tensors(2, 2)      
     np.testing.assert_array_equal(sd1**sd2, t1**t2)
     np.testing.assert_array_equal(sd1**2, t1**2)
+    np.testing.assert_array_equal(sd1.pow(sd2), t1.pow(t2))
+    
