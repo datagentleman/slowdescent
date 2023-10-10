@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
-from typing import List, Union
+from typing  import List, Union
 from numbers import Number
 
 ND_DATA = Union['Tensor', Number, np.ndarray]
@@ -18,7 +18,7 @@ class Tensor:
     def __add__(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data + t2)
 
-    
+
     def __sub__(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data - t2)
 
@@ -26,7 +26,12 @@ class Tensor:
     def __mul__(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data * t2)
     
-
+    
+    def __pow__(self, t2: ND_DATA) -> Tensor:
+        return Tensor(self.data ** t2)
+        
+    
     def __truediv__(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data / t2)
+    
     

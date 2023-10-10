@@ -9,7 +9,7 @@ from ..tensor import Tensor
 def create_tensors(*dims):
     size = functools.reduce(operator.mul, dims)
     data = np.arange(1, size+1).reshape(dims)
-     
+
     sd1 = Tensor(data)
     sd2 = Tensor(data)
     
@@ -41,3 +41,9 @@ def test_tensor_div():
     sd1, sd2, t1, t2 = create_tensors(2, 2)      
     np.testing.assert_array_equal(sd1/sd2, t1/t2)
     np.testing.assert_array_equal(sd1/2, t1/2)
+
+
+def test_tensor_pow():
+    sd1, sd2, t1, t2 = create_tensors(2, 2)      
+    np.testing.assert_array_equal(sd1**sd2, t1**t2)
+    np.testing.assert_array_equal(sd1**2, t1**2)
