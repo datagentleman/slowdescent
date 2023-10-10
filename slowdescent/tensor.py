@@ -20,3 +20,5 @@ class Tensor:
     def __mul__(self, t2:Tensor) -> Tensor:
         return Tensor(self.data * t2.data)
     
+    def __truediv__(self, t2:Tensor) -> Tensor:
+        return Tensor(self.data / t2.data)

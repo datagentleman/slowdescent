@@ -26,5 +26,10 @@ def test_tensor_sub():
 
 
 def test_tensor_mul():
-    sd1, sd2, t1, t2 = create_tensors()      
+    sd1, sd2, t1, t2 = create_tensors()          
     np.testing.assert_array_equal(sd1*sd2, t1*t2)
+
+
+def test_tensor_div():
+    sd1, sd2, t1, t2 = create_tensors()      
+    np.testing.assert_array_equal(sd1/sd2, t1/t2)
