@@ -16,21 +16,17 @@ class Tensor:
 
 
     def __add__(self, t2: ND_DATA) -> Tensor:
-        t2 = t2.data if isinstance(t2, Tensor) else t2 
         return Tensor(self.data + t2)
 
     
     def __sub__(self, t2: ND_DATA) -> Tensor:
-        t2 = t2.data if isinstance(t2, Tensor) else t2 
         return Tensor(self.data - t2)
 
 
     def __mul__(self, t2: ND_DATA) -> Tensor:
-        t2 = t2.data if isinstance(t2, Tensor) else t2 
         return Tensor(self.data * t2)
     
 
     def __truediv__(self, t2: ND_DATA) -> Tensor:
-        t2 = t2.data if isinstance(t2, Tensor) else t2 
         return Tensor(self.data / t2)
     
