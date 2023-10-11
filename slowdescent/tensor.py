@@ -6,6 +6,7 @@ from numbers import Number
 
 ND_DATA = Union['Tensor', Number, np.ndarray]
 
+
 class Tensor:
     def __init__(self, data: List|np.ndarray):
         self.data = np.array(data)
@@ -38,10 +39,17 @@ class Tensor:
     def div(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data / t2)
 
+
     # Transpose 2D.
     # For now, each time we are returning new Tensor. I'm planning to use np.views if possible.
     def t(self) -> Tensor:
         return Tensor(np.transpose(self))
+    
+    
+    @classmethod
+    def rand(cls, dims: tuple[int, ...], start: int=0, end: int=1) -> Tensor:
+        data = np.random.uniform(low=start, high=end, size=dims)
+        return Tensor(data)
     
     
     def __add__(self, t2: ND_DATA) -> Tensor: return self.add(t2)

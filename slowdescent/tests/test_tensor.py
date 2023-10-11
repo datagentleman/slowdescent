@@ -62,4 +62,9 @@ def test_tensor_pow():
 
 def test_tensor_transpose_2d():
     sd1, _, t1, _ = create_tensors(3, 2)   
-    np.testing.assert_array_equal(sd1.t(), t1)
+    np.testing.assert_array_equal(sd1.t(), t1.t())
+
+
+def test_tensor_rand():
+    t = Tensor.rand((2,3))
+    assert(t.data.shape == (2,3))
