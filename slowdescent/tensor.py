@@ -6,7 +6,6 @@ from numbers import Number
 
 ND_DATA = Union['Tensor', Number, np.ndarray]
 
-
 class Tensor:
     def __init__(self, data: List|np.ndarray):
         self.data = np.array(data)
@@ -47,7 +46,7 @@ class Tensor:
     
     
     @classmethod
-    def rand(cls, dims: tuple[int, ...], start: int=0, end: int=1) -> Tensor:
+    def rand(cls, dims: tuple[int, ...], start: float=0, end: float=1) -> Tensor:
         data = np.random.uniform(low=start, high=end, size=dims)
         return Tensor(data)
     
