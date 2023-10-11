@@ -59,3 +59,7 @@ def test_tensor_pow():
     np.testing.assert_array_equal(sd1**2, t1**2)
     np.testing.assert_array_equal(sd1.pow(sd2), t1.pow(t2))
     
+
+def test_tensor_transpose_2d():
+    sd1, _, t1, _ = create_tensors(3, 2)   
+    np.testing.assert_array_equal(sd1.t(), t1)

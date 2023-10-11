@@ -38,6 +38,11 @@ class Tensor:
     def div(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data / t2)
 
+    # Transpose 2D.
+    # For now, each time we are returning new Tensor. I'm planning to use np.views if possible.
+    def t(self) -> Tensor:
+        return Tensor(np.transpose(self))
+    
     
     def __add__(self, t2: ND_DATA) -> Tensor: return self.add(t2)
     def __sub__(self, t2: ND_DATA) -> Tensor: return self.sub(t2)
