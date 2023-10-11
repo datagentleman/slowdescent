@@ -17,7 +17,7 @@ class Tensor:
 
     def add(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data + t2)
-        
+
 
     def sub(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data - t2)
@@ -25,7 +25,11 @@ class Tensor:
 
     def mul(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data * t2)
-    
+
+
+    def matmul(self, t2: Tensor) -> Tensor:
+        return Tensor(np.matmul(self, t2))
+
     
     def pow(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data ** t2)
@@ -34,7 +38,7 @@ class Tensor:
     def div(self, t2: ND_DATA) -> Tensor:
         return Tensor(self.data / t2)
 
-
+    
     def __add__(self, t2: ND_DATA) -> Tensor: return self.add(t2)
     def __sub__(self, t2: ND_DATA) -> Tensor: return self.sub(t2)
     def __mul__(self, t2: ND_DATA) -> Tensor: return self.mul(t2)
