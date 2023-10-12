@@ -1,9 +1,10 @@
 import math
 
 from ..tensor import Tensor
+from ..layers import Layer
 
 # y = xA.t + b
-class Linear:
+class Linear(Layer):
     def __init__(self, in_size: int=1, out_size: int=1, activation=None):
         start = -math.sqrt(1/in_size) 
         end   = math.sqrt(1/in_size) 

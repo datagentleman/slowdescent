@@ -1,8 +1,10 @@
 import numpy as np
+
 from ..tensor import Tensor
+from ..layers import Loss
 
 
-class MSE:
+class MSE(Loss):
     def forward(self, input: Tensor, target: Tensor) -> float:
         return np.square(input.data - target.data).mean()
 

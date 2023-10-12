@@ -1,1 +1,1 @@
-from .linear import Linear
+from .layers import Layer, Loss, Activation
