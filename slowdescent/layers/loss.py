@@ -2,7 +2,7 @@ import numpy as np
 from ..tensor import Tensor
 
 
-class MSE():
+class MSE:
     def forward(self, input: Tensor, target: Tensor) -> float:
         return np.square(input.data - target.data).mean()
 
