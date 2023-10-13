@@ -8,7 +8,7 @@ def test_relu():
     rlu   = torch.nn.ReLU()
     input = torch.randn(100)
     
-    got = RELU()(Tensor(input.data))
+    got = RELU().forward(Tensor(input.data))
     expected = rlu(input)
     
     np.testing.assert_array_equal(got, expected)

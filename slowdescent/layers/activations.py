@@ -4,8 +4,10 @@ from ..layers import Activation
 
 
 class RELU(Activation):
+    def __init__(self):
+        self.a = None
+        
     def forward(self, input: Tensor) -> Tensor:
-        return Tensor(np.maximum(0, input))
+        self.a = Tensor(np.maximum(0, input))
+        return self.a
     
-    def __call__(self, input: Tensor) -> Tensor:
-        return self.forward(input)

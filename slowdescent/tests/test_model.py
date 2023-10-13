@@ -18,8 +18,12 @@ def test_model_run():
     m = Model()
     data = np.ndarray((2,2))
     
+    input  = Tensor(data)
     linear = Linear(2, 2)
-    input = Tensor(data.copy())
+    relu   = RELU()
     
-    m.add(linear).run(input)
+    m.add(linear).add(relu).run(input)
+    
     assert(linear.z != None)
+    assert(relu.a != None)
+    

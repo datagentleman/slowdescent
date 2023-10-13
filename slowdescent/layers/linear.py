@@ -11,6 +11,8 @@ class Linear(Layer):
         
         self.weights = Tensor.rand((out_size, in_size), start=start, end=end)
         self.biases  = Tensor.rand((1, out_size), start=start, end=end)
+        
+        self.z = None
 
 
     def forward(self, input: Tensor) -> Tensor:

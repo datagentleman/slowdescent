@@ -3,8 +3,8 @@ lib/
 include/
 share/
 
-slowdescent/.vscode/
-slowdescent/.venv
-slowdescent/.pytest_cache
-
+__pycache__
+.vscode
+.venv
+.pytest_cache
 pyvenv.cfg
