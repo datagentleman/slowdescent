@@ -12,11 +12,11 @@ def test_linear_layer():
     theirs = torch.nn.Linear(2, 3, dtype=torch.float64)
     ours   = Linear(2, 3)
 
-    # We must have the same weights and biases
-    ours.biases  = Tensor(theirs.bias.data)
-    ours.weights = Tensor(theirs.weight.data)
+    # We must have the same weights amnd biases
+    ours.biases  = Tensor(theirs.bias.data.detach())
+    ours.weights = Tensor(theirs.weight.data.detach())
 
-    got = ours(Tensor(input))
+    got = ours.forward(Tensor(input))
     expected = theirs(torch.tensor(input)).data
         
     np.testing.assert_array_equal(got, expected)
