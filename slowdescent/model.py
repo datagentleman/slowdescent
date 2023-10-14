@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing  import List
-from .tensor import Tensor
+from slowdescent.tensor import Tensor
 
 
 class Model:

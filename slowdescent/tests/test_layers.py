@@ -1,8 +1,8 @@
 import torch
 import numpy as np
 
-from ..layers.linear import Linear
-from ..tensor import Tensor
+from slowdescent.layers.linear import Linear
+from slowdescent.tensor import Tensor
 
 
 def test_linear_layer():

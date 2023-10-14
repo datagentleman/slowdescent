@@ -3,7 +3,7 @@ import numpy as np
 import operator
 import functools
 
-from ..tensor import Tensor
+from slowdescent.tensor import Tensor
 
 
 def create_tensors(*dims):

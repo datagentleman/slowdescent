@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 
-from ..layers import loss
+from slowdescent.layers import loss
 
 
 def test_mse_loss():

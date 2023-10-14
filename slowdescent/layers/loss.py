@@ -1,7 +1,7 @@
 import numpy as np
 
-from ..tensor import Tensor
-from ..layers import Loss
+from slowdescent.tensor import Tensor
+from slowdescent.layers import Loss
 
 
 class MSE(Loss):
@@ -11,4 +11,4 @@ class MSE(Loss):
 
     def __call__(self, input: Tensor, target: Tensor) -> float:
         return self.forward(input, target)
-    
+     
