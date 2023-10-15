@@ -56,3 +56,7 @@ class Tensor:
     def __mul__(self, t2: ND_DATA) -> Tensor: return self.mul(t2)
     def __pow__(self, t2: ND_DATA) -> Tensor: return self.pow(t2)
     def __truediv__(self, t2: ND_DATA) -> Tensor: return self.div(t2)
+
+    def __rsub__(self, t2: Number) -> Tensor:
+        return Tensor(t2 - self.data)
+        

@@ -6,12 +6,12 @@ from slowdescent.layers.linear import Linear
 from slowdescent.tensor import Tensor
 from slowdescent.model import Model
 
-
 def test_model_add():
     m = Model()
     m.add(Linear()).add(RELU())
     
     assert(len(m.layers) == 2)
+
 
 def test_model_run():
     m = Model()
@@ -26,5 +26,3 @@ def test_model_run():
     assert(linear.z != None)
     assert(relu.a != None)
     
-if __name__ == '__main__':
-    test_model_run()
